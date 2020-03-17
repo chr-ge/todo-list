@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 576px) {
+  .container {
+    max-width: 350px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@media (min-width: 768px) {
+  .container {
+    max-width: 530px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 770px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 950px;
+  }
+}
+
+.btn-create {
+  display: inline-block;
+  border: none;
+  background: #9966ff;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+  font-size: larger;
+}
+
+
+.btn-delete {
+  border: none;
+	font-family: inherit;
+  font-size: inherit;
+	font-weight: 700;
+	position: relative;
+  cursor: pointer;
+  background: #cb4e4e;
+	color: #fff;
+	box-shadow: 0 6px #ab3c3c;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+  padding: 0;
+}
+
+.btn-delete:hover {
+	box-shadow: 0 4px #ab3c3c;
+	top: 2px;
+}
+
+.btn-delete:active {
+	box-shadow: 0 0 #ab3c3c;
+	top: 6px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  font-size: large;
+  text-overflow: ellipsis;
+}
+
+input[type=text] {
+  font-size: larger;
+}
+
+input[type=text]:focus {
+  border-color: rgba(150, 103, 239, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(150, 103, 239, 0.6);
+  outline: 0 none;
+}
+
+p {
+  font-size: large;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 0 0 25px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 4px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+input[type="checkbox"]::before {
+  position: absolute;
+  content: '';
+  display: block;
+  opacity: 0;
+  top: 0px;
+  left: 5px;
+  width: 8px;
+  height: 14px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked {
   color: white;
+  content: '';
+  border-color: #0DCE0D;
+  background: #0DCE0D;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="checkbox"]:checked::before {
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#title {
+  width: 63%;
+}
+
+#date {
+  width: 25%;
+}
+
+@keyframes titleAnimation{
+  0%{
+      opacity: 0;
+      }
+  25%{
+      opacity: 0.25;
+      }
+  50%{
+      opacity: 0.5;
+      }
+  75%{
+      opacity: 0.75;
+      }
+  100%{
+      opacity: 1;
+      }
+}
+
+.elementToAnimate{
+  animation: titleAnimation 3s 1 0s linear;
 }
